@@ -15,9 +15,18 @@ const itemRef = document.querySelectorAll('.item');
 
 console.log(`Number of categories: ${itemRef.length}`);
 
+
 itemRef.forEach(node => {
-    const title = node.querySelector('h2');
-    const item = node.querySelectorAll('li');
-    console.log(`Category: ${title.textContent}`);
-    console.log(`Elements: ${item.length}`);
-})
+    const title = node.firstElementChild.textContent;
+    const item = node.lastElementChild.children.length;
+    console.log(`Category: ${title}`);
+    console.log(`Elements: ${item}`);
+});
+
+
+// itemRef.forEach(node => {
+//     const title = node.querySelector('h2');
+//     const item = node.querySelectorAll('li');
+//     console.log(`Category: ${title.textContent}`);
+//     console.log(`Elements: ${item.length}`);
+// });
